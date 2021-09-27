@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>2.2 了解CSS世界中的“未定义行为”</title>
+		<style>
+			a:active {
+				background-color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="javascript:" tabindex="2">鼠标按下执行:active伪类对应的CSS样式，鼠标抬起还原</a>
+		<a href="" id="button" tabindex="1">模拟按钮</a>
+		<blockquote>
+			<p class="zw">
+				看似平淡无奇的一段代码，最后却发生了意想不到的情况：Firefox浏览器的<code>:active</code>阵亡了，鼠标按下去没有UI变化，按钮背景没有变红！其他所有浏览器，如IE和Chrome浏览器，<code>:active</code>正常变红，符合预期。
+			</p>
+			<br />
+			<p>
+				tabindex：全局属性。指示其元素是否可以聚焦（获得焦点），以及它是否/在何处参与顺序键盘导航（因通常使用tab键操作,顾因此得名）。
+				　　当使用tab键在网页控件中进行导航时，将首先移动到具有最小tabindex属性值的控件上，最后在具有最大tabindex属性值的控件上结束。
+			</p>
+		</blockquote>
+	</body>
+	<script>
+		const button = document.getElementById("button");
+		button.addEventListener("mousedown", function (event) {
+			event.preventDefault();
+		});
+
+		let str = "";
+		for (let prop in button) {
+			str += `${prop}:${button[prop]}`;
+		}
+
+		console.log(str);
+	</script>
+</html>
