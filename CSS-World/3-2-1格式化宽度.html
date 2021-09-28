@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>3-2-1格式化宽度</title>
+		<style>
+			.parent {
+				position: relative;
+				width: 1000px;
+			}
+			.child {
+				position: absolute;
+				left: 20px;
+				right: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<blockquote>
+			<p class="zw">
+				（2）<span style="font-family: Times New Roman, 楷体_GB2312"
+					>格式化宽度</span
+				>。格式化宽度仅出现在“绝对定位模型”中，也就是出现在<code>position</code>属性值为<code>absolute</code>或<code>fixed</code>的元素中。在默认情况下，绝对定位元素的宽度表现是“包裹性”，宽度由内部尺寸决定，但是，有一种情况其宽度是由外部尺寸决定的，是什么情况呢？
+			</p>
+
+			<p class="zw">
+				对于非替换元素（见本书第4章），当<code>left/right</code>或<code>top/bottom</code>对立方位的属性值同时存在的时候，元素的宽度表现为“格式化宽度”，其宽度大小相对于最近的具有定位特性（<code>position</code>属性值不是<code>static</code>）的祖先元素计算。
+			</p>
+		</blockquote>
+		<div class="parent">
+			<div class="child">格式化宽度</div>
+		</div>
+	</body>
+</html>
