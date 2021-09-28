@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>3-3-2与众不同的初始值</title>
+		<style>
+			.box {
+				min-height: 0;
+				transition: min-height 0.3s;
+				background-color: blueviolet;
+			}
+			.box:hover {
+				min-height: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<blockquote>
+			<p class="zw">
+				虽然MDN和W3C维基的文档上都显示<code>min-width/min-height</code>的初始值是<code>0</code>，但是，根据我的分析和测试，所有浏览器中的<code>min-width/min-height</code>的初始值都是<code>auto</code>。证据如下：
+			</p>
+
+			<p class="zw">
+				（2）<span style="font-family: Times New Roman, 楷体_GB2312"
+					>数值变化无动画</span
+				>。假设元素的<code>min-width/min-height</code>的初始值是<code>0</code>，那么，当我们设置<code>transition</code>过渡同时改变了<code>min-width/min-height</code>值，岂不是应该有动画效果？结果：
+			</p>
+
+			<p style="text-align: left">
+				鼠标经过<code>.box</code>元素，元素突然变高，并无动画效果，但是，如果是下面这样的设置：
+			</p>
+
+			<pre>
+        .box {
+          min-height: 0; // 新添加
+          transition: min-height 0.3s;
+          background-color: blueviolet;
+        }
+        .box:hover {
+          min-height: 300px;
+        }
+      </pre>
+		</blockquote>
+		<div class="box">123</div>
+	</body>
+</html>
