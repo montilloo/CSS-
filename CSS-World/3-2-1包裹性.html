@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3-2-1包裹性</title>
+  <style>
+    .box {
+      width: 240px;
+      margin: 20px auto;
+    }
+
+    .container {
+      padding: 10px;
+      text-align: center;
+      background-color: blueviolet;
+    }
+    .content {
+      display: inline-block;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <blockquote>
+    <p class="zw">“包裹性”是我自己对“shrink-to-fit”理解后的一种称谓，我个人觉得非常形象好记，一直用了很多年。“包裹性”也是CSS世界中很重要的流布局表现形式。</p>
+    <p class="zw">中文就是博大精深，顾名思义，“包裹性”，除了“包裹”，还有“自适应性”。“自适应性”是区分后面两种尺寸表现很重要的一点。那么这个“自适应性”指的是什么呢？</p>
+    “包裹性”对实际开发有什么作用呢？
+    <p class="zw">请看这个需求：页面某个模块的文字内容是动态的，可能是几个字，也可能是一句话。然后，希望文字少的时候居中显示，文字超过一行的时候居左显示。该如何实现？</p>
+  </blockquote>
+
+  <div class="box">
+    <button>按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮按钮</button>
+    <input type="button" value="按钮">
+  </div>
+
+  <div class="container">
+    <p class="content">文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容文字内容</p>
+  </div>
+</body>
+</html>
