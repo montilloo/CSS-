@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>3.1块级元素</title>
+		<style>
+			.box {
+				padding: 10px;
+				background-color: #cd0000;
+			}
+			.box > img {
+				float: left;
+			}
+
+			.clear:after {
+				content: "";
+				/* display: table; */
+				display: block;
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<blockquote>
+			<p class="zw">正是由于“块级元素”具有换行特性，因此理论上它都可以配合<code>clear</code>属性来清除浮动带来的影响。例如：</p>
+		</blockquote>
+		<div class="box clear">
+			<img src="/images/common/l/1.jpg" />
+		</div>
+	</body>
+</html>
