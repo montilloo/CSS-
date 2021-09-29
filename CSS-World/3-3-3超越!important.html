@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>3-3-3超越!important</title>
+		<style>
+			img {
+				max-width: 256px;
+			}
+		</style>
+	</head>
+	<body>
+		<blockquote>
+			<p class="zw">
+				超越<code>!important</code>指的是<code>max-width</code>会覆盖<code>width</code>，而且这种覆盖不是普通的覆盖，是超级覆盖，覆盖到什么程度呢？大家应该都知道CSS世界中的<code>!important</code>的权重相当高，在业界，往往会把<code>!important</code>的权重比成“泰坦尼克”，比直接在元素的<code>style</code>属性中设置CSS声明还要高，一般用在CSS覆盖JavaScript设置上。但是，就是这么厉害的<code>!important</code>，直接被<code>max-width</code>一个浪头就拍沉了。比方说，针对下面的HTML和CSS设置，图片最后呈现的宽度是多少呢？
+			</p>
+		</blockquote>
+		<img
+			src="../images/common/l/2.jpg"
+			alt=""
+			style="width: 480px !important"
+		/>
+	</body>
+</html>
