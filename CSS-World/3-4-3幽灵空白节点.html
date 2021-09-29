@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>3-4-3幽灵空白节点</title>
+		<style>
+			div {
+				background-color: #cd0000;
+			}
+			span {
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<blockquote>
+			<p class="zw">
+				“幽灵空白节点”是内联盒模型中非常重要的一个概念，具体指的是：在HTML5文档声明中，内联元素的所有解析和渲染表现就如同每个行框盒子的前面有一个“空白节点”一样。这个“空白节点”永远透明，不占据任何宽度，看不见也无法通过脚本获取，就好像幽灵一样，但又确确实实地存在，表现如同文本节点一样，因此，我称之为“幽灵空白节点”。
+			</p>
+
+			<p class="zw">
+				虽然说“幽灵空白节点”是我自己根据CSS的特性表现起的一个非常形象的名字，但其绝不是空中楼阁、信口胡诌的。规范中实际上对这个“幽灵空白节点”是有提及的，“幽灵空白节点”实际上也是一个盒子，不过是个假想盒，名叫“strut”，中文直译为“支柱”，是一个存在于每个“行框盒子”前面，同时具有该元素的字体和行高属性的0宽度的内联盒。规范中的原文如下：
+			</p>
+		</blockquote>
+		<div><span></span></div>
+	</body>
+</html>
