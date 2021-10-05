@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>4-1-2content 内容生成技术</title>
+		<style>
+			.clear::after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+			.box {
+				width: 100px;
+				height: 100px;
+				background-color: aqua;
+				float: left;
+			}
+			.box1 {
+				width: 250px;
+				height: 256px;
+				text-align: justify;
+        border-bottom: 1px dashed #ccc;
+			}
+			.box1:before {
+				content: "";
+				display: inline-block;
+				height: 100%;
+			}
+
+			.box1:after {
+				content: "";
+				display: inline-block;
+				width: 100%;
+			}
+			.bar {
+				display: inline-block;
+        height: 0;
+				width: 20px;
+			}
+
+			dot {
+				display: inline-block;
+				height: 1em;
+				line-height: 1;
+				text-align: left;
+				vertical-align: -0.25em;
+				overflow: hidden;
+			}
+			dot::before {
+				display: block;
+				content: "...\A..\A.";
+				white-space: pre-wrap;
+				animation: dot 2s infinite step-start both;
+			}
+			@keyframes dot {
+				33% {
+					transform: translateY(-2em);
+				}
+				66% {
+					transform: translateY(-1em);
+				}
+			}
+      .withBackground::before{
+        content: url(../images/common/l/laugh.png);
+      }
+      q::before{
+        content: '”';
+      }
+      q::after {
+        content: '“';
+      }
+		</style>
+	</head>
+	<body>
+		<blockquote>
+			<p>辅助元素生成</p>
+			<h1>案例1、清除浮动：</h1>
+		</blockquote>
+		<div class="clear" style="border: 1px solid red">
+			<div class="box"></div>
+			<div class="box"></div>
+		</div>
+		<blockquote>
+			<h1>案例1、柱形图</h1>
+		</blockquote>
+		<div class="box1">
+			<i class="bar" style="width: 20px; height: 30px;background-color: black;"></i>
+			<i class="bar" style="width: 20px; height: 80px; background-color: azure;"></i>
+			<i class="bar" style="width: 20px; height: 150px; background-color: cadetblue;"></i>
+			<i class="bar" style="width: 20px; height: 40px; background-color: coral;"></i>
+		</div>
+		<blockquote>
+			<p>字符内容生成</p>
+			常见的应用就是配合@font-face规则实现图标字体效果。
+		</blockquote>
+		<div>正在加载中<dot>...</dot></div>
+    <blockquote>
+      <p>content图片生成</p>
+    </blockquote>
+    <div class="withBackground"></div>
+    <blockquote>
+      <h1>了解content开启闭合符号生成</h1>
+    </blockquote>
+    <q></q>
+	</body>
+</html>
