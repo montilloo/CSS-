@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>4-2-1padding 与元素的尺寸</title>
+		<style>
+			.box {
+				width: 80px;
+				padding: 20px 60px;
+				background-color: aquamarine;
+				box-sizing: border-box;
+			}
+			a {
+				padding: 50px;
+				background-color: #cd0000;
+				color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<blockquote>
+			<p class="zw">
+				很多人可能有这样的误区，认为设置了<code>box-sizing:border-box，</code>元素尺寸就不会变化。大多数情况下是这样的，但是，如果<code>padding</code>值足够大，那么<code>width</code>也无能为力了。例如：
+			</p>
+		</blockquote>
+		<div class="box"></div>
+		<blockquote>
+			<p style="text-align: left">
+				则此时的<code>width</code>会无效，最终宽度为120像素<code>（60px×</code>2<code>）</code>，而里面的内容则表现为“首选最小宽度”。
+			</p>
+		</blockquote>
+		<blockquote>
+			<p class="zw">
+				前端同事有这么一个错误的认识：内联元素的padding只会影响水平方向，不会影响垂直方向。这种认知是不准确的，内联元素的<code>padding</code>在垂直方向同样会影响布局，影响视觉表现。只是因为内联元素没有可视宽度和可视高度的说法（<code>clientHeight</code>和<code>clientWidth</code>永远是<code>0</code>），垂直方向的行为表现完全受<code>line-height</code>和<code>vertical-align的</code>影响，视觉上并没有改变和上一行下一行内容的间距，因此，给我们的感觉就会是垂直<code>padding</code>没有起作用。
+			</p>
+		</blockquote>
+		<a href="">链接</a>
+	</body>
+</html>
